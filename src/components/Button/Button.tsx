@@ -1,4 +1,5 @@
 import React from 'react';
+import { makeStyle } from '../../styles/provider/makeStyle';
 
 export interface ButtonProps {
   /**
@@ -17,10 +18,17 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
+const useStyles = makeStyle((theme) => ({
+  button: {
+    background: theme.palette.primary.main,
+  },
+}));
+
 /**
  * Primary UI component for user interaction
  */
 const Button: React.FC<ButtonProps> = ({ label, size, ...props }) => {
+  const classes = useStyles();
   return <button {...props}>{label}</button>;
 };
 

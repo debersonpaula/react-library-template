@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { createTheme, StyleThemeProvider } from '../styles';
-import { StyleThemeProviderProps } from '../styles/StyleThemeProvider';
+import { StyleThemeProviderProps } from '../styles/provider/tool';
 import Button from '../components/Button';
 
 export default {
