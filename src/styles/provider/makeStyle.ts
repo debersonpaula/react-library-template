@@ -1,26 +1,11 @@
-import { useContext, useCallback } from 'react';
-import { Styles } from 'react-jss';
-import { ThemeContext } from '../context/styleThemeContext';
-// import { createUseStyles, theming } from '../context/styleThemeContext';
+import { createUseStyles, Styles } from 'react-jss';
+import { Classes } from 'jss';
 import { Theme } from '../theme';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function makeStyle<C extends string = string, Props = unknown>(
   styles: (theme: Theme) => Styles<C, Props, Theme>,
   options?: { name?: string },
-) {
-  // const useStylesFromTheme = createUseStyles<any, Props, Theme>((theme) => ({}), options);
-  // return useStylesFromTheme;
-  const useStylesCallback = () => {
-    // const theme = useContext(ThemeContext);
-    // const styles =
-  };
-
+): (data?: Props) => Classes<C> {
+  const useStylesCallback = createUseStyles<C, Props>(styles as never, options);
   return useStylesCallback;
 }
-
-const useStyles = makeStyle((theme) => ({
-  button: {
-    background: theme.palette.primary.main,
-  },
-}));

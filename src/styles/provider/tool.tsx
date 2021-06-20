@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeContext } from '../context/styleThemeContext';
+import { ThemeProvider } from 'react-jss';
 import { Theme } from '../theme';
 
 export interface StyleThemeProviderProps {
@@ -7,5 +7,5 @@ export interface StyleThemeProviderProps {
 }
 
 export const StyleThemeProvider: React.FC<StyleThemeProviderProps> = ({ children, theme }) => {
-  return <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

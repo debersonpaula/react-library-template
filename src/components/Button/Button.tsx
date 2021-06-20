@@ -27,9 +27,14 @@ const useStyles = makeStyle((theme) => ({
 /**
  * Primary UI component for user interaction
  */
-const Button: React.FC<ButtonProps> = ({ label, size, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ label, ...props }) => {
+  // const classes = useStyles();
   const classes = useStyles();
-  return <button {...props}>{label}</button>;
+  return (
+    <button {...props} className={classes.button}>
+      {label}
+    </button>
+  );
 };
 
 export default Button;
