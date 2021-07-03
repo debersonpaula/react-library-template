@@ -20,7 +20,14 @@ export interface ButtonProps {
 
 const useStyles = makeStyle((theme) => ({
   button: {
-    background: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.main,
+    border: 'none',
+    color: 'white',
+    padding: '15px 32px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block',
+    fontSize: 16,
   },
 }));
 
